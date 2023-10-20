@@ -36,6 +36,8 @@ driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", options=AppiumOptions(
 time.sleep(10)
 el1 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Financial Freedom\nStarts Here\nLogin/Sign Up\nPhone Number")
 el1.click()
+
+# Choose one to un/command to switch languange 
 el2 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="ID")
 el2.click()
 time.sleep(10)
