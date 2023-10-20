@@ -32,8 +32,6 @@ cap:Dict[str, Any]={
 # caps["appium:newCommandTimeout"] = 3600
 # caps["appium:connectHardwareKeyboard"] = True
 
-
-# driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", caps)
 driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", options=AppiumOptions().load_capabilities(cap))
 time.sleep(10)
 el1 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Financial Freedom\nStarts Here\nLogin/Sign Up\nPhone Number")
