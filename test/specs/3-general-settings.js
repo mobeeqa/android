@@ -33,7 +33,7 @@ describe('General Settings', () => {
         await driver.$('//android.view.View[@content-desc="English"]').click()
     });
 
-    // need to reload first & head to profile
+    // need to reload first & head to profile then access settings
 
     it('[Settings] - Change currency', async() => {
         // click settings, change currency to USD
