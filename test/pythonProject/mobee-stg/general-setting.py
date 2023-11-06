@@ -43,18 +43,19 @@ TouchAction(driver).tap(None, 408, 2025, 1).perform()
 TouchAction(driver).tap(None, 147, 1610, 1).perform()
 time.sleep(5)
 # disappear keyboard on screen
-driver.hideKeyboard()
+driver.hide_keyboard()
 
 time.sleep(3)
 btn_next = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Continue")
 btn_next.click()
 
 # Input password
-time.sleep(5)
+time.sleep(6)
 password = driver.find_element(by=AppiumBy.CLASS_NAME, value="android.widget.EditText")
 password.click()
 password.send_keys("Testing123")
-driver.hideKeyboard()
+time.sleep(7)
+driver.hide_keyboard()
 time.sleep(3)
 
 btn_login = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Log In")
@@ -70,17 +71,37 @@ bio = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Not Now")
 bio.click()
 # el9 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Enable Biometrics")
 # el9.click()
+time.sleep(5)
 
-#Tab the menu Nav Bar
-home = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Home\nTab 1 of 5")
-home.click()
-trade = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Trade\nTab 2 of 5")
-trade.click()
-earn = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Earn\nTab 3 of 5")
-earn.click()
-trx = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Transactions\nTab 4 of 5")
-trx.click()
-wallet = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Wallet\nTab 5 of 5")
-wallet.click()
+#Profile page
+# profile_button = driver.find_element_by_android_uiautomator(
+#     'new UiSelector().description("Settings")'
+# )
+profile_button = driver.find_element(by=AppiumBy.CLASS_NAME, value="android.widget.ImageView")
+profile_button.click()
+TouchAction(driver).tap(None, 996, 175,1).perform()
+time.sleep(5)
+
+setting  = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Settings")
+setting.click()
+time.sleep(5)
+
+# Choose one to switch language 
+lang = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Language\nEnglish")
+lang.click()
+time.sleep(3)
+IND = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Bahasa Indonesia")
+IND.click()
+time.sleep(3)
+
+# el4 = driver.find_element(by=AppiumBy.CLASS_NAME, value="android.widget.Button")
+# el4.click()
+# el5 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Default Mata Uang\nIDR")
+# el5.click()
+# el6 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="USD")
+# el6.click()
+# el7 = driver.find_element(by=AppiumBy.CLASS_NAME, value="android.widget.Button")
+# el7.click()
+
 
 driver.quit()

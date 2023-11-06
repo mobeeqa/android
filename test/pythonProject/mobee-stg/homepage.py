@@ -20,16 +20,19 @@ cap:Dict[str, Any]={
       "appium:appGrantPermissions": "true",
       "appium:autoGrantPermissions": "true"
 }
-
 driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", options=AppiumOptions().load_capabilities(cap))
 time.sleep(10)
 
-#Launch the Mobee App
-el1 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Financial Freedom\nStarts Here\nLogin/Sign Up\nPhone Number")
-el1.click()
-el2 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Skip")
-el2.click()
-time.sleep(10)
-
+# Tab the menu Nav Bar
+home = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Home\nTab 1 of 5")
+home.click()
+trade = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Trade\nTab 2 of 5")
+trade.click()
+earn = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Earn\nTab 3 of 5")
+earn.click()
+trx = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Transactions\nTab 4 of 5")
+trx.click()
+wallet = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Wallet\nTab 5 of 5")
+wallet.click()
 
 # driver.quit()
