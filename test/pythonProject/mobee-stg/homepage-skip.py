@@ -32,6 +32,7 @@ skip_button.click()
 time.sleep(5)
 trade = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Trade\nTab 2 of 5")
 trade.click()
+time.sleep(5)
 
 
-# driver.quit()
+driver.quit()
